@@ -55,7 +55,6 @@ Hide/Show table of contents
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | **Core React**                                                                                                                                                                                                                   |
 | 1   | [What is React?](#what-is-react)                                                                                                                                                                                                 |
-| 2   | [What is the history behind React’s evolution?](#what-is-the-history-behind-react-evolution)                                                                                                                                      |
 | 3   | [What are the major features of React?](#what-are-the-major-features-of-react)                                                                                                                                                   |
 | 4   | [What is JSX?](#what-is-jsx)                                                                                                                                                                                                     |
 | 5   | [What is the difference between an Element and a Component?](#what-is-the-difference-between-element-and-component)                                                                                                              |
@@ -447,18 +446,6 @@ Hide/Show table of contents
 
     **[⬆ Back to Top](#table-of-contents)**
 
-2.  ### What is the history behind React evolution?
-
-    The history of ReactJS started in 2010 with the creation of **XHP**. XHP is a PHP extension which improved the syntax of the language such that XML document fragments become valid PHP expressions and the primary purpose was used to create custom and reusable HTML elements.
-
-    The main principle of this extension was to make front-end code easier to understand and to help avoid cross-site scripting attacks. The project was successful to prevent the malicious content submitted by the scrubbing user.
-
-    But there was a different problem with XHP in which dynamic web applications require many roundtrips to the server, and XHP did not solve this problem. Also, the whole UI was re-rendered for small change in the application. Later, the initial prototype of React is created with the name **FaxJ** by Jordan inspired from XHP. Finally after sometime React has been introduced as a new library into JavaScript world.
-
-    **Note:** JSX comes from the idea of XHP
-
-    **[⬆ Back to Top](#table-of-contents)**
-
 3.  ### What are the major features of React?
 
     The major features of React are:
@@ -496,22 +483,6 @@ Hide/Show table of contents
       );
     }
     ```
-
-     <details><summary><b>See Class</b></summary>
-     <p>
-
-    ```jsx harmony
-    class App extends React.Component {
-      render() {
-        return <h1 className="greeting">{"Hello, this is a JSX Code!"}</h1>;
-      }
-    }
-    ```
-
-     </p>
-     </details>
-
-    **Note:** JSX is stricter than HTML
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -594,28 +565,14 @@ Hide/Show table of contents
 
 7.  ### When to use a Class Component over a Function Component?
 
-    After the addition of Hooks(i.e. React 16.8 onwards) it is always recommended to use Function components over Class components in React. Because you could use state, lifecycle methods and other features that were only available in class component present in function component too.
+    After the addition of Hooks(**React 16.8**) it is always recommended to use Function components over Class components in React. 
 
     But even there are two reasons to use Class components over Function components.
-
-    1. If you need a React functionality whose Function component equivalent is not present yet, like Error Boundaries.
-    2. In older versions, If the component needs _state or lifecycle methods_ then you need to use class component.
-
-    So the summary to this question is as follows:
-
-    **Use Function Components:**
-
-    - If you don't need state or lifecycle methods, and your component is purely presentational.
-    - For simplicity, readability, and modern code practices, especially with the use of React Hooks for state and side effects.
-
-    **Use Class Components:**
-
-    - If you need to manage state or use lifecycle methods.
-    - In scenarios where backward compatibility or integration with older code is necessary.
-
-    **Note:** You can also use reusable [react error boundary](https://github.com/bvaughn/react-error-boundary) third-party component without writing any class. i.e, No need to use class components for Error boundaries.
-
-    The usage of Error boundaries from the above library is quite straight forward.
+    
+    - If you need a React functionality whose Function component equivalent is not present yet, like Error Boundaries.
+    - In older versions, If the component needs _state or lifecycle methods_ then you need to use class component.
+   
+    **Note:** You can also use reusable [react error boundary](https://github.com/bvaughn/react-error-boundary) third-party component without writing any class.
 
     > **_Note when using react-error-boundary:_** ErrorBoundary is a client component. You can only pass props to it that are serializable or use it in files that have a `"use client";` directive.
 
@@ -631,7 +588,7 @@ Hide/Show table of contents
 
     **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### What are Pure Components?
+9.  ### What are Pure Components?
 
     Pure components are the components which render the same output for the same state and props. In function components, you can achieve these pure components through memoized `React.memo()` API wrapping around the component. This API prevents unnecessary re-renders by comparing the previous props and new props using shallow comparison. So it will be helpful for performance optimizations.
 
@@ -684,7 +641,7 @@ Hide/Show table of contents
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### What is state in React?
+10.  ### What is state in React?
 
     _State_ of a component is an object that holds some information that may change over the lifetime of the component. The important point is whenever the state object changes, the component re-renders. It is always recommended to make our state as simple as possible and minimize the number of stateful components.
 
@@ -739,7 +696,7 @@ Hide/Show table of contents
 
     **[⬆ Back to Top](#table-of-contents)**
 
-10. ### What are props in React?
+11. ### What are props in React?
 
     _Props_ are inputs to components. They are single values or objects containing a set of values that are passed to components on creation similar to HTML-tag attributes. Here, the data is passed down from a parent component to a child component.
 
